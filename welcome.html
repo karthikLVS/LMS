@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo" onclick="window.location.href='welcome.html'">GK</div>
+    <!-- Library Name -->
+    <div class="library-name">GK'S Online Library</div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="javascript:void(0);" onclick="showLoginForm()">Admin/User</a></li>
+        </ul>
+    </div>
+
+    <!-- Centered login form -->
+    <div class="centered">
+        <div class="login-form">
+            <!-- Login Form -->
+            <form action="login.html" method="post" class="active">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the login form
+        function showLoginForm() {
+            document.querySelector('.login-form').style.display = 'block'; // Show the form
+        }
+
+        // Function to create sparkle effect
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            document.body.appendChild(sparkle);
+
+            // Remove sparkle after animation ends
+            sparkle.addEventListener('animationend', () => {
+                sparkle.remove();
+            });
+        }
+
+        // Add event listener for logo click
+        document.querySelector('.logo').addEventListener('click', (event) => {
+            const rect = event.target.getBoundingClientRect();
+            createSparkle(rect.left + 30, rect.top + 30); // Center of the logo
+            window.location.href = 'welcome.html'; // Redirect to welcome.jsp
+        });
+    </script>
+</body>
+</html>
