@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book 1 - Computer Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex; /* Center content vertically and horizontally */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8); /* Black background */
+            color: white; /* White text inside the block */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px white; /* White box shadow */
+            text-align: center;
+            width: 300px; /* Fixed width for the box */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #8B4513; /* Saddle Brown */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            width: 100%; /* Full width */
+            font-size: 18px; /* Font size */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .button:hover {
+            background-color: #CD5C5C; /* Indian Red on hover */
+        }
+
+        .message {
+            margin-top: 20px;
+            color: green; /* Success message color */
+            display: none; /* Initially hidden */
+        }
+    </style>
+    <script>
+        function showMessage(action) {
+            const messageElement = document.getElementById('message');
+            if (action === 'borrow') {
+                messageElement.textContent = 'Borrow done successfully!';
+            } else if (action === 'buy') {
+                messageElement.textContent = 'Purchase done successfully!';
+            }
+            messageElement.style.display = 'block'; // Show the message
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Computer Science Book 1</h1>
+        <p>This is a detailed description of Computer Science Book 1. It covers various topics in computer science.</p>
+        <button class="button" onclick="showMessage('borrow')">Borrow</button>
+        <button class="button" onclick="showMessage('buy')">Buy</button>
+        <div id="message" class="message"></div>
+    </div>
+</body>
+</html>
