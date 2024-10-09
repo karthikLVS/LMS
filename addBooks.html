@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Form with glassy black background -->
+    <div class="form-container">
+        <h2>Add New Book</h2>
+        <form action="AddBookServlet" method="post">
+            <label for="bookName">Book Name:</label>
+            <input type="text" id="bookName" name="bookName" required>
+
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" name="authorName" required>
+
+            <label for="datePublished">Date Published:</label>
+            <input type="date" id="datePublished" name="datePublished" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <!-- Add and Back buttons -->
+            <input type="submit" value="Add">
+            <input type="button" value="Back" onclick="location.href='admin.html'">
+        </form>
+    </div>
+
+</body>
+</html>
