@@ -1,0 +1,463 @@
+body {
+    background-image: url('images/Li2.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack elements */
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Welcome Message */
+.welcome-message {
+    text-align: center;
+    margin: 20% auto; /* Center the block */
+    font-size: 36px;
+    color: #FFD700; /* Gold */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px; /* Padding around the text */
+    border-radius: 15px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    width: 80%; /* Responsive width */
+    max-width: 600px; /* Max width */
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    overflow-y: auto; /* Allows vertical scrolling */
+    height: calc(100vh - 100px); /* Adjust height */
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px; /* Margin to prevent overlap with nav bar */
+}
+
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Comic Rows and Boxes */
+.comic-row {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    margin-bottom: 20px;
+    padding: 10px 0;
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.comic-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: calc((100% / 4) - 10px); /* Four boxes in a row */
+    height: 150px;
+    margin: 5px; /* Space between boxes */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* Smooth scaling */
+}
+
+.comic-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #8B4513; /* Saddle Brown */
+}
+
+/* Glassy Black Form */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 15px white;
+    width: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #FFD700; /* Gold color */
+    margin-bottom: 30px;
+}
+
+.form-container label {
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="date"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+.form-container input[type="submit"],
+.form-container input[type="button"],
+.buttons-container input[type="button"] {
+    width: 45%;
+    padding: 10px;
+    margin: 10px 5%;
+    background-color: #8B4513; /* Saddle Brown for consistency */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover,
+.form-container input[type="button"]:hover,
+.buttons-container input[type="button"]:hover {
+    background-color: #CD5C5C; /* Indian Red on hover */
+}
+
+/* Dashboard Menu */
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #8B4513; /* Saddle Brown hover */
+}
+
+/* Centered Buttons */
+.buttons-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* GK Logo at the Top Left */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px #FFD700; /* Gold glow */
+    box-shadow: 0 0 10px white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+    animation: sparkle 0.5s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        text-shadow: 0 0 5px #FFD700;
+    }
+    50% {
+        text-shadow: 0 0 15px #FFD700, 0 0 25px white;
+    }
+}
+
+/* Glassy Black Table Container */
+.table-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Glassy effect */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px white; /* White box shadow */
+    width: 80%; /* Full width for better visibility */
+    overflow: auto; /* To enable scrolling if necessary */
+}
+
+.page-title {
+    color: white; /* Title color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* To remove space between table cells */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    color: white;
+    border-bottom: 1px solid #ddd; /* Light gray line */
+}
+
+th {
+    background-color: #8B4513; /* Saddle Brown for header */
+}
+
+tr:hover {
+    background-color: rgba(255, 215, 0, 0.2); /* Gold hover effect */
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 20px;
+    background-color: #8B4513; /* Saddle Brown */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #CD5C5C; /* Indian Red on hover */
+}
+
+/* Message Box */
+.message-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px white; /* White box shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+    transition: opacity 0.3s ease;
+}
+
+.message-box.show {
+    opacity: 1; /* Show message */
+}
+
+.message-box.hide {
+    opacity: 0; /* Hide message */
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+/* Login Form */
+.login-form {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.login-form input[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700; /* Gold */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #8B4513; /* Saddle Brown */
+}
+
+.message {
+    margin-top: 20px;
+    color: white;
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+/* Flexbox for centering form */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style for the text below the logo */
+.library-name {
+    position: absolute;
+    top: 180px; /* Increased space between logo and library name */
+    left: 250px; /* Move the library name further to the right */
+    font-size: 36px; /* Increase font size */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px #FFD700; /* Gold glow */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Vertical navigation bar styling */
+.nav-bar {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between icons */
+    z-index: 100; /* Ensures the nav bar stays above other elements */
+}
+
+.nav-icon {
+    width: 60px;
+    height: 60px;
+    background-color: black; /* Changed to black */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icon:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Slightly visible on hover */
+    transform: scale(1.1);
+}
+
+.nav-icon img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1); /* Inverts colors for white icons */
+}
+
+/* Logout Button */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #8B4513;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Change to a red color on hover */
+}
+
+/* Comic Row Adjustment */
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns the arrows and heading */
+    width: 100%; /* Ensures it takes the full width */
+}
+
+.row-heading {
+    flex-grow: 1; /* Allows the heading to take available space */
+    text-align: center; /* Center aligns the heading */
+}
