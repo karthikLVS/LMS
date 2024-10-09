@@ -27,11 +27,13 @@
     <div class="centered">
         <div class="login-form">
             <!-- Login Form -->
-            <form action="login.html" method="post" class="active">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+            <form id="login-form" method="post" onsubmit="return skipLogin()">
+                <label for="username">Username:(Directly press login if you want to view admin viewpoint or give username as user and password as 1234 to view user viewpoint)</label>
+                <input type="text" id="username" name="username">
+
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
+
                 <input type="submit" value="Login">
             </form>
         </div>
@@ -43,26 +45,20 @@
             document.querySelector('.login-form').style.display = 'block'; // Show the form
         }
 
-        // Function to create sparkle effect
-        function createSparkle(x, y) {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-            sparkle.style.left = `${x}px`;
-            sparkle.style.top = `${y}px`;
-            document.body.appendChild(sparkle);
+        // Skip login and redirect based on username and password
+        function skipLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-            // Remove sparkle after animation ends
-            sparkle.addEventListener('animationend', () => {
-                sparkle.remove();
-            });
+            // Check for specific credentials
+            if (username === 'user' && password === '1234') {
+                window.location.href = 'welcome1.html'; // Redirect to welcome1.html for user credentials
+            } else {
+                window.location.href = 'admin.html'; // Redirect to admin.html for other cases
+            }
+
+            return false; // Prevent form submission
         }
-
-        // Add event listener for logo click
-        document.querySelector('.logo').addEventListener('click', (event) => {
-            const rect = event.target.getBoundingClientRect();
-            createSparkle(rect.left + 30, rect.top + 30); // Center of the logo
-            window.location.href = 'welcome.html'; // Redirect to welcome.jsp
-        });
     </script>
 </body>
 </html>
