@@ -53,7 +53,7 @@
             // Check for specific credentials
             if (username === 'user' && password === '1234') {
                 window.location.href = 'welcome1.html'; // Redirect to welcome1.html for user credentials
-            } else {
+            } else if(username === 'admin' && password === 'admin'){
                 window.location.href = 'admin.html'; // Redirect to admin.html for other cases
             }
 
